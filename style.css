@@ -177,8 +177,8 @@ header {
   font-size: 60px;
   font-weight: bold;
 }
-.sub-nav-item .about-list {
-  margin-left: 5%;
+.sub-nav-item .content-item {
+  margin-left: 2.5%;
 }
 .sub-nav-item .about-list li {
   font-size: 40px;
@@ -206,8 +206,6 @@ header {
 .member-item h3 {
   font-size: 20px;
 }
-
-
 
 /* footer */
 footer {
