@@ -10,6 +10,8 @@
 }
 html, body {
   height: 100%;
+  background-color: #303030;
+  margin: 0 auto;
 }
 body {
   line-height: 1.5;
@@ -51,16 +53,28 @@ img {
 }
 
 /* initial display */
-body {
+.backgroud-image {
   background: url(./img/zangi.jpg);
+  background-attachment: fixed;
   background-size: cover;
   background-position: center;
+
+  position: relative;
+}
+.backgroud-image:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 .wrapper {
   position: relative;
   width: auto;
-  height: 95vh;
-  background: rgba(0, 0, 0, 0.5);
+  font-size: 25px;
 }
 
 /* header */
@@ -71,7 +85,7 @@ header {
   margin: 0;
   width: 100%;
   padding: 20px;
-  z-index: 1;
+  z-index: 10;
 }
 .header-container {
   display: flex;
@@ -91,6 +105,7 @@ header {
 
 /* main-nav */
 .main-content {
+  height: 100vh;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -99,7 +114,6 @@ header {
 .main-nav {
   flex: 1;
   margin-left: 5%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -185,12 +199,12 @@ header {
   font-weight: bold;
 }
 .sub-nav-item .about-list li:before {
-  content:  "";     /* 空の要素作成 */
+  content:  "";
   background-image: url('/img/zangies-logo.png');
-  width:  30px;               /* 幅指定 */
-  height:  30px;              /* 高さ指定 */
-  display:  inline-block;     /* インラインブロックにする */
-  border-radius:  50%;        /* 要素を丸くする */
+  width:  30px;
+  height:  30px;
+  display:  inline-block;
+  border-radius:  50%;
   margin-right: 20px;
 }
 .sub-nav.top {
@@ -209,14 +223,77 @@ header {
 
 /* footer */
 footer {
-  height: 5vh;
-  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 10px 20px;
+  z-index: 10;
+  width: 100%;
 }
 footer .copylight {
-  width: 95%;
-  height: 100%;
-  margin: 0 auto;
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+}
+
+/* about */
+.about-content {
+  position: relative;
+  width: min(95%, 1200px);
+  padding: 150px 0 100px;
+  margin: 0 auto;
+  animation-name:fadeUpAnime;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.about-content h2 {
+  font-size: 90px;
+  font-weight: 600;
+}
+.about-item {
+  margin: 30px 3% 30px;
+}
+.about-item .about-message > p {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 100;
+  margin: 50px 0;
+}
+.about-item .about-message .about-message-text {
+  font-size: 30px;
+  font-weight: 600;
+}
+.about-job h3 {
+  border-left: 10px solid #fff;
+  padding-left: 15px;
+  font-size: 40px;
+  font-weight: 400;
+}
+.about-job-article {
+  margin: 30px 0 50px;
+}
+.about-job-article h4 {
+  margin: 30px 0;
+  font-size: 30px;
+  font-weight: 400;
+}
+.job-img-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2%;
+}
+.article-img img {
+  margin: 0 auto;
 }
